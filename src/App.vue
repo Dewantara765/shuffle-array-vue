@@ -68,8 +68,8 @@ function enterArray(input){
       
     </div>
     <div class="new-array">
-        <p>Array lama : {{ oldArray }}</p>
-        <p>Array baru : {{ newArrayNumber }}</p>
+        <p><b>Array lama</b> : {{ oldArray }}</p>
+        <p><b>Array baru</b> : {{ newArrayNumber }}</p>
       </div>
     </div>
   </main>
