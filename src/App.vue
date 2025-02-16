@@ -2,8 +2,10 @@
 import {ref} from 'vue'
 
 const oldArray = ref([])
-const newArray = ref([])
+let newArray = []
+const newArrayNumber = ref([])
 const error = ref("")
+const enter = ref("")
 
 
 function shuffleArray (array){
@@ -26,12 +28,15 @@ function enterArray(input){
     if(array.length > 30){
       error.value = "Maksimal panjang array 30"
     }else {
+      newArray = [];
       shuffleArray(array)
-      newArray.value = array;
+      for(let i = 0;  i < array.length; i++){
+        newArray.push(parseInt(array[i]))
+      }
+      newArrayNumber.value = newArray;
+      
     }  
   }
- 
-  
 }
 
 
@@ -43,51 +48,61 @@ function enterArray(input){
 <template>
 
   <main>
-  <div class="array">
+    <div class="array">
       <div class="array-input">
-        <label htmlFor="inputArray">Masukkan List Array</label>
-        <input type="text" id="inputArray" class="inputArray" name="inputArray" v-model="oldArray"/>
-        <div style="color:red;">
+        <label htmlFor="inputArray">Masukkan List Array (maks 30)</label>
+        <textarea type="text" id="inputArray" class="inputArray" name="inputArray" v-model="oldArray" rows="5" cols="20"></textarea>
+    </div>
+    <div class="error">
+      <p style="width: 150px;"></p>
+      <div style="color:red; justify-content: center;">
           {{ error }}
         </div>
-      
-      <div class="button">
+    </div>
+    
+    
+    <div class="button-array">
         <button class="shuffle-button" @click="enterArray(oldArray)">Acak</button>
-      </div>
-      <div class="new-array">
+      
+    </div>
+    <div class="new-array">
         <p>Array lama : {{ oldArray }}</p>
-        <p>Array baru : {{ newArray }}</p>
+        <p>Array baru : {{ newArrayNumber }}</p>
       </div>
     </div>
-  </div>
   </main>
 </template>
 
 <style scoped>
 .array{
   height: 400px;
-  width: 300px;
+  width: 600px;
   background-color: paleturquoise;
-  display: flex;
-  flex-direction: row;
-
+  justify-content: start;
 
 }
 
 .array-input{
-  margin: 20px;
-  padding: 20px;
+  margin: 5px;
+  padding: 5px 10px 0 10px;
+  color: red;
+  display: flex;
+  align-items: center;
   
 }
 .inputArray{
+
   font-size: 16px;
   padding: 10px;
-  color: red;
+  margin: 5px;
 
 }
-.button{
-  margin:10px;
+
+.error{
+  display: flex;
+  flex-direction: row;
 }
+
 
 .shuffle-button{
 font-size: 16px;
@@ -99,11 +114,17 @@ padding: 10px;
 border : 1px solid;
 
 }
+
+.button-array{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .new-array{
   margin: 10px;
   font-size: 16px;
-  color: red;
 }
 
 
 </style>
+
