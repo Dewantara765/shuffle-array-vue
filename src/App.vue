@@ -23,17 +23,17 @@ function enterArray(input){
     error.value = "Gunakan koma sebagai pemisah"
   }else{
     const array = input.split(",");
-   if(array.length > 30){
-    error.value = "Maksimal panjang array 30"
-   }else{
-     shuffleArray(array)
-     newArray.value = array;
-   }
-   
+    if(array.length > 30){
+      error.value = "Maksimal panjang array 30"
+    }else {
+      shuffleArray(array)
+      newArray.value = array;
+    }  
   }
  
   
 }
+
 
 
 
