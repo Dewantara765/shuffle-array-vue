@@ -97,6 +97,7 @@ border : 1px solid;
 .new-array{
   margin: 10px;
   font-size: 16px;
+  color: red;
 }
 
 
