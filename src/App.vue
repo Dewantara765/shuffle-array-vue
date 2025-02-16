@@ -23,10 +23,12 @@ function shuffleArray (array){
 function enterArray(input){
   if(!input.includes(",")) {
     error.value = "Gunakan koma sebagai pemisah"
+    newArrayNumber.value = []
   }else{
     const array = input.split(",");
     if(array.length > 30){
       error.value = "Maksimal panjang array 30"
+      newArrayNumber.value = []
     }else {
       newArray = [];
       shuffleArray(array)
