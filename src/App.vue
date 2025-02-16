@@ -23,6 +23,9 @@ function enterArray(input){
     error.value = "Gunakan koma sebagai pemisah"
   }else{
     const array = input.split(",");
+   if(array.length > 30){
+    error.value = "Maksimal panjang array 30"
+   }
     shuffleArray(array)
     newArray.value = array;
   }
@@ -78,6 +81,7 @@ function enterArray(input){
 
   font-size: 16px;
   padding: 10px;
+ color: red;
 
 }
 .button{
