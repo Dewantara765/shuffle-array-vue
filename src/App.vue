@@ -25,9 +25,11 @@ function enterArray(input){
     const array = input.split(",");
    if(array.length > 30){
     error.value = "Maksimal panjang array 30"
+   }else{
+     shuffleArray(array)
+     newArray.value = array;
    }
-    shuffleArray(array)
-    newArray.value = array;
+   
   }
  
   
@@ -78,10 +80,9 @@ function enterArray(input){
   
 }
 .inputArray{
-
   font-size: 16px;
   padding: 10px;
- color: red;
+  color: red;
 
 }
 .button{
