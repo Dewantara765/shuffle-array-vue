@@ -22,8 +22,7 @@ function shuffleArray (array){
 
 function enterArray(input){
   if(!input.includes(",")) {
-    error.value = "Gunakan koma sebagai pemisah"
-    newArrayNumber.value = []
+    newArrayNumber.value = input
   }else{
     const array = input.split(",");
     if(array.length > 30){
