@@ -27,10 +27,10 @@ function enterArray(input){
     const array = input.split(",");
     if(array.length > 30){
       error.value = "Maksimal panjang array 30"
-      enter.value = true
       newArrayNumber.value = []
     }else {
       newArray = [];
+      error.value = ""
       shuffleArray(array)
       for(let i = 0;  i < array.length; i++){
         newArray.push(array[i])
@@ -68,7 +68,7 @@ function enterArray(input){
       
     </div>
     <div class="new-array">
-        <p>Array lama : {{ oldArray }}<br v-if="enter"></p>
+        <p>Array lama : {{ oldArray }}</p>
         <p>Array baru : {{ newArrayNumber }}</p>
       </div>
     </div>
