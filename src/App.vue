@@ -31,7 +31,7 @@ function enterArray(input){
       newArray = [];
       shuffleArray(array)
       for(let i = 0;  i < array.length; i++){
-        newArray.push(parseInt(array[i]))
+        newArray.push((array[i])
       }
       newArrayNumber.value = newArray;
       
